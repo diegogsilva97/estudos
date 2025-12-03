@@ -1,8 +1,9 @@
+import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 
 @Component({
   selector: 'app-school',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './school.component.html',
   })
 export class SchoolComponent  {
@@ -10,8 +11,18 @@ export class SchoolComponent  {
   schoolNome = 'Exemplo escolas';
   nomeFunc = 'Outro nome'
 
+  schoolSituacao = 'aberta';
+
+  constructor(){
+    this.schoolSituacao = Math.random() > 0.5 ? 'aberta' : 'fechada'
+  }
+
 getNomeEscola(){
   return this.nomeFunc;
+}
+
+getStatusCor(){
+  return this.schoolSituacao === 'aberta' ? 'green' : 'red';
 }
 
 }

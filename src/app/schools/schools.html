@@ -1,7 +1,23 @@
-<button class="btn btn-primary" [disabled]="!aceitaNovaEscola">INCLUIR</button>
+<label for="">Nome da Escola</label>
+<input type="text" class="form-control" (input)="updateSchoolName($event)">
+<input type="text" class="form-control" [(ngModel)]="scholName">
 
+<button
+    class="btn btn-primary"
+    [disabled]="!aceitaNovaEscola"
+    (click)="createdSchool()">INCLUIR</button>
+
+    <p *ngIf="schoolCreated; else noSchool"> A escola foi cirada: {{scholName}}</p>
+
+<ng-template #noSchool>
+   <p> Nenhuma escola cirada:</p>
+</ng-template>
+
+
+<p>{{scholName}}</p>
 <p>{{aceitaNovaEscola}}</p>
-<p>{{createdSchoolsStatus}}</p>
+
+
 
 
 <p [innerText] = "aceitaNovaEscola"></p>
