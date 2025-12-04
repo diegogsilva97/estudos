@@ -5,6 +5,9 @@ import { Component } from "@angular/core";
   selector: 'app-school',
   imports: [CommonModule],
   templateUrl: './school.component.html',
+  styles: [`
+    .aberta { color: white}
+    `]
   })
 export class SchoolComponent  {
   schoolid = 100;
